@@ -1,0 +1,60 @@
+// functions  --> return a value
+
+@function size($n) {
+  @return #{$n * $unit};
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  .col {
+    width: 50%;
+  }
+
+  .col-30 {
+    width: 30%;
+  }
+
+  .col-70 {
+    width: 70%;
+  }
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+// podemos crear diferentes estilos a partir de loops
+
+@for $i from 1 to $limit {
+  // desde el 1 hasta el limite que son 10
+
+  .m-#{$i} {
+    margin: #{$i *
+      $unit}; //el margen sera en cada iteracion la iteracion * multiply por la unidad que en este caso es 8
+  }
+}
+
+@for $i from 1 to $limit {
+  .p-#{$i} {
+    margin: #{$i * $unit};
+  }
+}
+
+@for $i from 1 to $limit {
+  .py-#{$i} {
+    padding: #{$i * $unit} 0;
+  }
+}
+
+@for $i from 1 to $limit {
+  .my-#{$i} {
+    margin: #{$i * $unit} 0;
+  }
+}
+
+@for $i from 1 to 4 {
+  .w-#{$i * 25} {
+    width: $i * 25%;
+  }
+}
